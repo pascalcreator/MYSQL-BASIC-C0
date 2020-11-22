@@ -69,27 +69,138 @@ id	name	platform	year	genre	publisher	NA_Sales	EU_Sales	JP_Sales	Other_Sales	Glo
 968	NFL GameDay 2000 	PS 	1999	Sports 	989 Studios 	1	68	0	12	18	
 
 -- Opdracht 3
+127.0.0.1/mod-mysql-basic-opdracht/videogamesales/		http://localhost/phpmyadmin/db_sql.php?db=mod-mysql-basic-opdracht
+ Weergave van records 0 -  0 (1 totaal, Query duurde 0,0039 seconden.)
+
+SELECT SUM(NA_Sales) FROM videogamesales
+WHERE genre='sports'
+
+
+
+24081	
 
 -- Opdracht 4
+127.0.0.1/mod-mysql-basic-opdracht/videogamesales/		http://localhost/phpmyadmin/db_sql.php?db=mod-mysql-basic-opdracht
+ Weergave van records 0 - 11 (12 totaal, Query duurde 0,0034 seconden.)
+
+SELECT name,platform FROM videogamesales
+WHERE publisher='nintendo' AND year BETWEEN 1990 AND 2005
+
+
+name	platform	
+Pokemon Red/Pokemon Blue 	GB 	
+Nintendogs 	DS 	
+Mario Kart DS 	DS 	
+Super Mario World 	SNES 	
+Brain Age: Train Your Brain in Minutes a Day 	DS 	
+Pokemon Ruby/Pokemon Sapphire 	GBA 	
+Pok�mon Yellow: Special Pikachu Edition 	GB 	
+Animal Crossing: Wild World 	DS 	
+Super Mario 64 	N64 	
+Super Mario All-Stars 	SNES 	
+Pokemon FireRed/Pokemon LeafGreen 	GBA 	
+Super Mario 64 	DS 	
 
 -- Opdracht 5
+127.0.0.1/mod-mysql-basic-opdracht/videogamesales/		http://localhost/phpmyadmin/db_sql.php?db=mod-mysql-basic-opdracht
+ Weergave van records 0 - 24 (101 totaal, Query duurde 0,0117 seconden.)
+
+SELECT name,platform FROM videogamesales
+WHERE publisher='nintendo' AND year BETWEEN 1990 AND 2005
+
+
+name	platform	
+Pokemon Red/Pokemon Blue 	GB 	
+Nintendogs 	DS 	
+Mario Kart DS 	DS 	
+Pokemon Gold/Pokemon Silver 	GB 	
+Super Mario World 	SNES 	
+Brain Age: Train Your Brain in Minutes a Day 	DS 	
+Pokemon Ruby/Pokemon Sapphire 	GBA 	
+Brain Age 2: More Training in Minutes a Day 	DS 	
+Pok�mon Yellow: Special Pikachu Edition 	GB 	
+Animal Crossing: Wild World 	DS 	
+Super Mario 64 	N64 	
+Super Mario Land 2: 6 Golden Coins 	GB 	
+Super Mario All-Stars 	SNES 	
+Pokemon FireRed/Pokemon LeafGreen 	GBA 	
+Super Mario 64 	DS 	
+Mario Kart 64 	N64 	
+Donkey Kong Country 	SNES 	
+Super Mario Kart 	SNES 	
+GoldenEye 007 	N64 	
+The Legend of Zelda: Ocarina of Time 	N64 	
+Super Smash Bros. Melee 	GC 	
+Mario Kart: Double Dash!! 	GC 	
+Big Brain Academy 	DS 	
+Pok�mon Emerald Version 	GBA 	
+Pok�mon Crystal Version 	GB 	
+	
 
 -- Opdracht 6 
+127.0.0.1/mod-mysql-basic-opdracht/videogamesales/		http://localhost/phpmyadmin/db_sql.php?db=mod-mysql-basic-opdracht
+ Weergave van records 0 -  0 (1 totaal, Query duurde 0,0039 seconden.)
+
+SELECT name,MAX(Global_Sales) AS spel_meest_verkocht_global FROM videogamesales
+
+
+
+Wii Sports 	8274	
 
 -- Opdracht 7 
+127.0.0.1/mod-mysql-basic-opdracht/videogamesales/		http://localhost/phpmyadmin/db_sql.php?db=mod-mysql-basic-opdracht
+ Weergave van records 0 -  0 (1 totaal, Query duurde 0,0116 seconden.)
+
+SELECT AVG(EU_Sales) AS gemiddeld_puzzle_genre_verkocht FROM videogamesales
+WHERE genre='Puzzle'
+
+
+
+107.9565	
 
 -- Opdracht 8
+127.0.0.1/mod-mysql-basic-opdracht/videogamesales/		http://localhost/phpmyadmin/db_sql.php?db=mod-mysql-basic-opdracht
+ Weergave van records 0 -  0 (1 totaal, Query duurde 0,0052 seconden.)
 
+SELECT name,genre,publisher FROM videogamesales
+WHERE JP_Sales=532
+
+
+
+Brain Age 2: More Training in Minutes a Day 	Puzzle 	Nintendo 
 -- Opdracht 9
+127.0.0.1/mod-mysql-basic-opdracht/videogamesales/		http://localhost/phpmyadmin/db_sql.php?db=mod-mysql-basic-opdracht
+ Weergave van records 0 -  0 (1 totaal, Query duurde 0,0064 seconden.)
+
+SELECT SUM(Global_Sales) AS totaal_verkocht_wereld_nintendo FROM videogamesales
+WHERE publisher='nintendo'
+
+
+
+132901	
+	
 
 -- Opdracht 10
+127.0.0.1/mod-mysql-basic-opdracht/videogamesales/		http://localhost/phpmyadmin/db_sql.php?db=mod-mysql-basic-opdracht
+ Weergave van records 0 -  0 (1 totaal, Query duurde 0,0049 seconden.)
 
+SELECT AVG(NA_Sales+EU_Sales+JP_Sales) AS gemiddeld_Na_EU_JP_verkoop FROM videogamesales
+
+
+
+355.8318
 -- Opdracht 11
-
+ 1 rij bijgewerkt. (Query duurde 0,0162 seconden.)
+DELETE FROM videogamesales WHERE name='halo 2' AND platform='XB'
 -- Opdracht 12
-
+ 86 rijen bijgewerkt. (Query duurde 0,0193 seconden.)
+DELETE FROM videogamesales WHERE year=2012 OR publisher='ubisoft'
 -- Opdracht 13
-
+ 6 rijen bijgewerkt. (Query duurde 0,0185 seconden.)
+DELETE FROM videogamesales WHERE genre='adventure' AND publisher='nintendo'
 -- Opdracht 14
-
+ 183 rijen bijgewerkt. (Query duurde 0,0206 seconden.)
+DELETE FROM videogamesales WHERE publisher='nintendo' AND Global_Sales<=1000
 -- Opdracht 15
+ 0 rijen bijgewerkt. (Query duurde 0,0090 seconden.)
+DELETE FROM videogamesales WHERE year=1997 AND NA_sales>=200000
